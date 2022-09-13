@@ -63,7 +63,7 @@ module DC_plug(){
             translate([-1.7,4.2,t]){ cube([13.6,8.8,6.2]); cube([3,8.8,10.6]); }
             translate([-1.7,8.6,t+6.2]) rotate([0,90,0]) cylinder(d=8.8, h=13.6);
         }
-        translate([-1.71,8.6,t+5.7]) rotate([0,90,0]) cylinder(d=6.2, h=11.6);
+        translate([-1.71,8.6,t+6.2]) rotate([0,90,0]) cylinder(d=6.2, h=11.6);
     }
     translate([1,8.6,t+6.2]) rotate([0,90,0]) color("silver") cylinder(d=1.3, h=8);
 }
