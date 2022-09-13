@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MobiflightConnector>
+  <outputs>
+    <config guid="e127182c-be83-414c-a30a-1832c18b9612">
+      <active>true</active>
+      <description>CRS_DISPLAY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(L:MCP_NAV1_dig1, number) 100 * (L:MCP_NAV1_dig2, number) 10 * + (L:MCP_NAV1_dig3, number) +" UUID="a731287c-911f-432c-a831-64f2d1becaec" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="Display Module" serial="MCP/ SN-44b-1ba" trigger="normal" ledAddress="SEG_DISPLAYS" ledConnector="1" ledModuleSize="8" ledPadding="True" ledPaddingChar="0" ledDigits="5,6,7" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="a62201c1-338f-4d0b-af15-46377a38de80">
+      <active>true</active>
+      <description>SPD_DISPLAY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT AIRSPEED HOLD VAR, knot)" UUID="5da88d8d-1325-4894-9258-081fc23dadec" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="Display Module" serial="MCP/ SN-44b-1ba" trigger="normal" ledAddress="SEG_DISPLAYS" ledConnector="1" ledModuleSize="8" ledPadding="True" ledPaddingChar="0" ledDigits="1,2,3" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="786b3279-7814-46a4-bacf-b0f0def1779b">
+      <active>true</active>
+      <description>HDG_DISPLAY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT HEADING LOCK DIR:1,Degrees)" UUID="0d4f63de-e7c3-4631-9288-95f31622489b" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="Display Module" serial="MCP/ SN-44b-1ba" trigger="normal" ledAddress="SEG_DISPLAYS" ledConnector="2" ledModuleSize="8" ledPadding="True" ledPaddingChar="0" ledDigits="5,6,7" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="3ee7d8c9-2ffa-4d3b-95cc-85f81579c57b">
+      <active>true</active>
+      <description>VS_DISPLAY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT VERTICAL HOLD VAR,Feet/minute)" UUID="bc545a04-646d-41ce-a510-2c798f7dfe1d" />
+        <comparison active="True" value="0" operand="=" ifValue="" elseValue="$" />
+        <display type="Display Module" serial="MCP/ SN-44b-1ba" trigger="normal" ledAddress="SEG_DISPLAYS" ledConnector="2" ledModuleSize="8" ledPadding="True" ledPaddingChar=" " ledDigits="0,1,2,3,4" />
+        <preconditions />
+        <transformation active="True" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="0ff74e11-be2c-4d0d-a594-fb7d5e1ed844">
+      <active>true</active>
+      <description>ALT_DISPLAY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT ALTITUDE LOCK VAR:3,feet)" UUID="5edb0587-91e8-4fd1-8b59-77d639f3b0fa" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="Display Module" serial="MCP/ SN-44b-1ba" trigger="normal" ledAddress="SEG_DISPLAYS" ledConnector="3" ledModuleSize="8" ledPadding="True" ledPaddingChar=" " ledDigits="3,4,5,6,7" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="bd0ca2d7-733b-4235-92ff-0ee0729fe826">
+      <active>true</active>
+      <description>AP_GREEN_LED</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:AUTOPILOT MASTER,Bool)" UUID="59411677-275b-4f69-82d2-eb93c20db76c" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="AP_LED_GREEN" pinBrightness="255" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="d31c79bd-c780-4735-bf81-7c975c462087">
+      <active>true</active>
+      <description>LEFT_GEAR_DOWN</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:GEAR LEFT POSITION,Percent)" UUID="7b6f6c2e-c57a-473f-a8cd-2c4b2e08a06d" />
+        <comparison active="True" value="100" operand="=" ifValue="1" elseValue="0" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="LEFT_MAIN_GREEN" pinBrightness="255" />
+        <preconditions />
+        <transformation active="True" expression="$*#" substrStart="0" substrEnd="7" />
+        <configrefs>
+          <configref active="True" ref="474ceaf4-65a8-4181-a366-47fc216ff00e" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="88827228-5be4-4f75-bbba-3dee749b81f8">
+      <active>true</active>
+      <description>NOSE_GEAR_DOWN</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:GEAR CENTER POSITION,Percent)" UUID="2fcbb65e-ac51-41e8-86b7-a0acfce2f30a" />
+        <comparison active="True" value="100" operand="=" ifValue="1" elseValue="0" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="NOSE_GREEN" pinBrightness="255" />
+        <preconditions />
+        <transformation active="True" expression="$*#" substrStart="0" substrEnd="7" />
+        <configrefs>
+          <configref active="True" ref="474ceaf4-65a8-4181-a366-47fc216ff00e" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="ce1cd09d-36c2-4c7a-9d1d-596d370b7760">
+      <active>true</active>
+      <description>RIGHT_GEAR_DOWN</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:GEAR RIGHT POSITION,Percent)" UUID="1976ba5b-c140-464a-87f4-a74551fd1d2f" />
+        <comparison active="True" value="100" operand="=" ifValue="1" elseValue="0" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="RIGHT_MAIN_GREEN" pinBrightness="255" />
+        <preconditions />
+        <transformation active="True" expression="$*#" substrStart="0" substrEnd="7" />
+        <configrefs>
+          <configref active="True" ref="474ceaf4-65a8-4181-a366-47fc216ff00e" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="bb5ce6c6-699f-4a7c-ae9b-6dec20e5a236">
+      <active>true</active>
+      <description>LEFT_GEAR_TRANSIT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:GEAR LEFT POSITION,Percent)" UUID="7b6f6c2e-c57a-473f-a8cd-2c4b2e08a06d" />
+        <comparison active="True" value="100" operand="=" ifValue="0" elseValue="$" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="LEFT_MAIN_RED" pinBrightness="255" />
+        <preconditions />
+        <transformation active="True" expression="$*#" substrStart="0" substrEnd="7" />
+        <configrefs>
+          <configref active="True" ref="474ceaf4-65a8-4181-a366-47fc216ff00e" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="450a74ab-ea43-43e7-aa90-9580d11c2b95">
+      <active>true</active>
+      <description>NOSE_GEAR_TRANSIT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:GEAR CENTER POSITION,Percent)" UUID="2fcbb65e-ac51-41e8-86b7-a0acfce2f30a" />
+        <comparison active="True" value="100" operand="=" ifValue="0" elseValue="$" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="NOSE_RED" pinBrightness="255" />
+        <preconditions />
+        <transformation active="True" expression="$*#" substrStart="0" substrEnd="7" />
+        <configrefs>
+          <configref active="True" ref="474ceaf4-65a8-4181-a366-47fc216ff00e" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="4d8d8084-4727-44c6-ad46-4868efe2484e">
+      <active>true</active>
+      <description>RIGHT_GEAR_TRANSIT</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:GEAR RIGHT POSITION,Percent)" UUID="1976ba5b-c140-464a-87f4-a74551fd1d2f" />
+        <comparison active="True" value="100" operand="=" ifValue="0" elseValue="$" />
+        <display type="Pin" serial="MCP/ SN-44b-1ba" trigger="normal" pin="RIGHT_MAIN_RED" pinBrightness="255" />
+        <preconditions />
+        <transformation active="True" expression="$*#" substrStart="0" substrEnd="7" />
+        <configrefs>
+          <configref active="True" ref="474ceaf4-65a8-4181-a366-47fc216ff00e" placeholder="#" />
+        </configrefs>
+      </settings>
+    </config>
+    <config guid="64687cb2-6e27-4319-ac1e-2db31bdcfa8c">
+      <active>true</active>
+      <description>AUX_DISPLAY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="Variable" varType="number" varName="MyVar" varExpression="$" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="Display Module" serial="MCP/ SN-44b-1ba" trigger="normal" ledAddress="SEG_DISPLAYS" ledConnector="3" ledModuleSize="8" ledPadding="True" ledPaddingChar=" " ledDigits="0,1" />
+        <preconditions />
+        <transformation active="True" expression="$*1" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="474ceaf4-65a8-4181-a366-47fc216ff00e">
+      <active>true</active>
+      <description>MASTER_BATTERY</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:ELECTRICAL MAIN BUS VOLTAGE,Volts)" UUID="c989f6c0-4d0c-4505-9354-1254051eb17a" />
+        <comparison active="True" value="20" operand="&gt;" ifValue="1" elseValue="0" />
+        <display type="" serial="MCP/ SN-44b-1ba" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="1720382f-bac0-43fb-9fe0-39ae3fb4826e">
+      <active>true</active>
+      <description>PANEL_BRIGHTNESS</description>
+      <settings msdata:InstanceType="MobiFlight.OutputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <source type="SimConnect" VarType="CODE" Value="(A:LIGHT BACKLIGHT INTENSITY,Percent over 100)" UUID="b1eae32c-6a0a-4fe4-8372-e08dcb2c9e7a" />
+        <comparison active="False" value="" operand="" ifValue="" elseValue="" />
+        <display type="" serial="MCP/ SN-44b-1ba" trigger="normal" pin="" pinBrightness="255" />
+        <preconditions />
+        <transformation active="False" expression="$" substrStart="0" substrEnd="7" />
+        <configrefs />
+      </settings>
+    </config>
+  </outputs>
+  <inputs>
+    <config guid="889759b4-577b-4c4e-a4d0-3badcf56486d">
+      <active>true</active>
+      <description>Landing Gear SW</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" serial="MCP/ SN-44b-1ba" name="GEAR_SW" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;K:GEAR_UP)" presetId="fe68cf20-2c27-4532-8ab3-bd5c605a197c" />
+          <onRelease type="MSFS2020CustomInputAction" command="(&gt;K:GEAR_DOWN)" presetId="c713f67d-03cb-48c9-a3d5-0665a509837b" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="4d06f243-b50d-49b2-83cf-6026058a136f">
+      <active>true</active>
+      <description>HDG_ENC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" serial="MCP/ SN-44b-1ba" name="HDG_ENC" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <encoder>
+          <onLeft type="MSFS2020CustomInputAction" command="(L:HSI_hdg_bug,enum) -- 0 max (&gt;L:HSI_hdg_bug,enum) (&gt;K:HEADING_BUG_DEC) (L:HSI_hdg_bug,enum) 0 == if{ 100  (&gt;L:HSI_hdg_bug,enum) }" presetId="2442549c-0325-4db6-b59c-5c85b6265845" />
+          <onLeftFast type="MSFS2020CustomInputAction" command="(L:HSI_hdg_bug,enum) -- 0 max (&gt;L:HSI_hdg_bug,enum) (&gt;K:HEADING_BUG_DEC) (L:HSI_hdg_bug,enum) 0 == if{ 100  (&gt;L:HSI_hdg_bug,enum) }" presetId="2442549c-0325-4db6-b59c-5c85b6265845" />
+          <onRight type="MSFS2020CustomInputAction" command="(L:HSI_hdg_bug,enum) ++ 100 min (&gt;L:HSI_hdg_bug,enum) (&gt;K:HEADING_BUG_INC) (L:HSI_hdg_bug,enum) 100 == if{ 0  (&gt;L:HSI_hdg_bug,enum) }" presetId="bbddbfaf-9d11-416b-ab95-4a920aa6fb37" />
+          <onRightFast type="MSFS2020CustomInputAction" command="(L:HSI_hdg_bug,enum) ++ 100 min (&gt;L:HSI_hdg_bug,enum) (&gt;K:HEADING_BUG_INC) (L:HSI_hdg_bug,enum) 100 == if{ 0  (&gt;L:HSI_hdg_bug,enum) }" presetId="bbddbfaf-9d11-416b-ab95-4a920aa6fb37" />
+        </encoder>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="b657c65b-6829-4f89-86e0-b1345211848e">
+      <active>true</active>
+      <description>VS_ENC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" serial="MCP/ SN-44b-1ba" name="VS_ENC" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <encoder>
+          <onLeft type="MSFS2020CustomInputAction" command="(&gt;K:AP_VS_VAR_DEC)" presetId="2fdf3342-238b-4055-9fd9-97aaa666e278" />
+          <onLeftFast type="MSFS2020CustomInputAction" command="(&gt;K:AP_VS_VAR_DEC)" presetId="2fdf3342-238b-4055-9fd9-97aaa666e278" />
+          <onRight type="MSFS2020CustomInputAction" command="(&gt;K:AP_VS_VAR_INC)" presetId="49533c9c-bcb5-42f6-9c23-353a4a89e53b" />
+          <onRightFast type="MSFS2020CustomInputAction" command="(&gt;K:AP_VS_VAR_INC)" presetId="49533c9c-bcb5-42f6-9c23-353a4a89e53b" />
+        </encoder>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="2073e6f8-f7f7-42e0-9d6b-ed5ccef3f258">
+      <active>true</active>
+      <description>SPD_ENC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" serial="MCP/ SN-44b-1ba" name="SPD_ENC" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <encoder>
+          <onLeft type="MSFS2020CustomInputAction" command="(&gt;K:AP_SPD_VAR_DEC)" presetId="5f986bc3-c167-46a0-acf3-e94bd02606d2" />
+          <onLeftFast type="MSFS2020CustomInputAction" command="(&gt;K:AP_SPD_VAR_DEC)" presetId="5f986bc3-c167-46a0-acf3-e94bd02606d2" />
+          <onRight type="MSFS2020CustomInputAction" command="(&gt;K:AP_SPD_VAR_INC)" presetId="5a6e646f-6b5a-4ceb-9761-2250c9f0f237" />
+          <onRightFast type="MSFS2020CustomInputAction" command="(&gt;K:AP_SPD_VAR_INC)" presetId="5a6e646f-6b5a-4ceb-9761-2250c9f0f237" />
+        </encoder>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="9ff3e9a7-34e7-4609-97bb-e59ddea757f0">
+      <active>true</active>
+      <description>ALT_ENC</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" serial="MCP/ SN-44b-1ba" name="ALT_ENC" type="Encoder" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <encoder>
+          <onLeft type="MSFS2020CustomInputAction" command="(&gt;K:AP_ALT_VAR_DEC)" presetId="035b1f1d-1e4e-4809-9713-07fe5ab0581d" />
+          <onLeftFast type="MSFS2020CustomInputAction" command="(&gt;K:AP_ALT_VAR_DEC)" presetId="035b1f1d-1e4e-4809-9713-07fe5ab0581d" />
+          <onRight type="MSFS2020CustomInputAction" command="(&gt;K:AP_ALT_VAR_INC)" presetId="6b70bc27-97bf-499e-ba49-3d63984aa593" />
+          <onRightFast type="MSFS2020CustomInputAction" command="(&gt;K:AP_ALT_VAR_INC)" presetId="6b70bc27-97bf-499e-ba49-3d63984aa593" />
+        </encoder>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+    <config guid="27105326-928a-42b3-9ba4-13f8ff3f6536">
+      <active>true</active>
+      <description>Autopilot On</description>
+      <settings msdata:InstanceType="MobiFlight.InputConfigItem, MFConnector, Version=9.5.0.0, Culture=neutral, PublicKeyToken=null" serial="MCP/ SN-44b-1ba" name="AUTOPILOT_SW" type="Button" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <button>
+          <onPress type="MSFS2020CustomInputAction" command="(&gt;K:AUTOPILOT_ON)" presetId="581b1237-6227-4672-8456-7c9918f32e4c" />
+          <onRelease type="MSFS2020CustomInputAction" command="(&gt;K:AUTOPILOT_OFF)" presetId="bb9fd42a-427c-4f7c-a638-289ae746eb30" />
+        </button>
+        <preconditions />
+        <configrefs />
+      </settings>
+    </config>
+  </inputs>
+</MobiflightConnector>
