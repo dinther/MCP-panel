@@ -7,7 +7,7 @@ But if not, then here are the details you will need to print these STL's.
 ### Hole test piece
 ![image](https://user-images.githubusercontent.com/1192916/190268608-86d415f6-26f0-4350-9e21-bcf386e25e40.png)
 
-- Material: PLA (PETG if used in hot environments)
+- Material: same as what you intend to use for the Display panel
 - color": any
 - Nozzle: 0.4mm
 - Layer height: 0.3mm
