@@ -212,18 +212,20 @@ module panelbox(){
 //  Small object to test hole sizes for mounting components
 module hole_test(){
     difference(){
-        translate([-4, -11, 0]) cube([50,22,thickness]);
+        translate([-4, -12, 0]) cube([50,24,thickness]);
         translate([0, 0, 0]) 3mm_led_hole(thickness, 0);
         translate([7, -1, 0]) encoder_hole(thickness, 0);
         translate([17, 0, 0]) toggle_switch_hole(thickness, 0);
         translate([27, 0, 0]) push_button_hole(thickness, 0);   
         translate([39, 0, 0]) selector_hole(thickness, 0); //cylinder(d=9.85, h=thickness);
     }
-    translate([0, 8, thickness]) text(text = "1", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
-    translate([7, 8, thickness]) text(text = "2", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
-    translate([17, 8, thickness]) text(text = "3", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
-    translate([27, 8, thickness]) text(text = "4", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
-    translate([39, 8, thickness]) text(text = "5", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+    translate([0, 8, thickness]) linear_extrude(layer_height){
+        translate([0, 0]) text(text = "1", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+        translate([7, 0]) text(text = "2", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+        translate([17, 0]) text(text = "3", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+        translate([27, 0]) text(text = "4", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+        translate([39, 0]) text(text = "5", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+    } 
 }
 
 //  back cover lid for the display panel
