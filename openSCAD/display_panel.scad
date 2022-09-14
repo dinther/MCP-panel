@@ -302,7 +302,7 @@ module panel(){
         translate([left_margin + display_outer_width + spacing + display_outer_width + spacing + display_outer_width +right_margin-13,bottom_row, 0]) toggle_switch_hole(thickness, 0);
 
         //  AP light insert
-        translate([13,bottom_row + 12,-4]) 3mm_led_hole(4 + thickness,0);
+        translate([13,bottom_row + 12,-4]) 3mm_led_hole(4 + thickness - (layer_height * face_layers),0);
         translate([13,bottom_row + 12,thickness-3]) cylinder(d1=1, d2=9, h=2.5);
         
         //  switch slots
@@ -326,7 +326,6 @@ module panel(){
             arduino_mega_DC_plug_cut();
         }
     }
-         
 }
 
 //  Rendering
