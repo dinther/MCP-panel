@@ -5,7 +5,7 @@ It is best to generate your own STL files using the free and excellent openSCAD 
 But if not, then here are the details you will need to print these STL's.
 
 ### Hole test piece
-![image](https://user-images.githubusercontent.com/1192916/190268608-86d415f6-26f0-4350-9e21-bcf386e25e40.png)
+![image](https://user-images.githubusercontent.com/1192916/190273148-bfafa799-c9ca-4006-8779-e3d022ad6497.png)
 
 - Material: same as what you intend to use for the Display panel
 - color": any
