@@ -32,3 +32,9 @@ Load the main body into the slicer and place it with the face (Text side) down o
 Align the two objects as accurately as possible.
 
 You can allocate a different extruder to each object. I will write a tutorial later on how to create amazing dual material panel prints later.
+
+- Material: PLA (PETG if used in hot environments)
+- Color: gray / white
+- Nozzle: 0.4mm
+- Layer height: 0.3mm
+- Infill: 15%
