@@ -3,7 +3,7 @@ w = 53.3;
 t = 1.6;
 $fn=45;
 
-module pcb_holes(diameter = 3.2, height = 1.6){
+module arduino_mega_pcb_holes(diameter = 3.2, height = 1.6){
     translate([13.97, 2.54, 0]) cylinder(d=diameter,h=height);
     translate([15.3, 50.7, 0])  cylinder(d=diameter,h=height);
     translate([66.1, 35.5, 0])  cylinder(d=diameter,h=height);
@@ -13,16 +13,16 @@ module pcb_holes(diameter = 3.2, height = 1.6){
     translate([96.52, 2.52, 0]) cylinder(d=diameter,h=height);
 }
 
-module pcb(){
+module arduino_mega_pcb(){
     b = 2.8;
     difference(){
         linear_extrude(t) polygon([[0,0],[l-b,0],[l-b,1],[l,1 + b],[l,1 + b + 35],[l-b, 1 + b + 35 + b],[l-b,w-2],[l-b-2,w],[0,w]]);
         //  PCB holes
-        translate([0,0,-1]) pcb_holes(3.2, t + 2);
+        translate([0,0,-1]) arduino_mega_pcb_holes(3.2, t + 2);
     }
 }
 
-module headers(){
+module arduino_mega_headers(){
     translate([17.6,w-3.9,t]) cube([25.6, 2.3, 8.9]);
     translate([44.6,w-3.9,t]) cube([20.5, 2.3, 8.9]);
     translate([67,w-3.9,t]) cube([20.5, 2.3, 8.9]);
@@ -37,7 +37,7 @@ module headers(){
     translate([62.5, 24.6,t]) cube([5, 7.2, 8.9]);   
 }
 
-module components(){
+module arduino_mega_components(){
     //  cpu
     translate([43.1,21.3,t]) color("#111111") cube([13.4, 13.4, 1.3]);
     //  button
@@ -45,19 +45,19 @@ module components(){
     translate([73.95,27.95,t+2.1]) color("red") cylinder(d = 2.8, h = 0.9);
 }
 
-module USB_plug(){
+module arduino_mega_USB_plug(){
     translate([-6.3,32.3,t]) color("silver") cube([16.1,12,10.6]);
 }
 
-module USB_plug_cut(){  //  0.5mm oversized for hole cutting
+module arduino_mega_USB_plug_cut(){  //  0.5mm oversized for hole cutting
     translate([-6.3,32.05,t-0.25]) color("silver") cube([16.1,12.5,11.1]);
 }
 
-module DC_plug_cut(){  //  0.5mm oversized for hole cutting
+module arduino_mega_DC_plug_cut(){  //  0.5mm oversized for hole cutting
     translate([-4.7,3.95,t-0.25]){ cube([6,9.3,11.1]); }    
 }
 
-module DC_plug(){
+module arduino_mega_DC_plug(){
     color("#111111") difference(){
         union(){
             translate([-1.7,4.2,t]){ cube([13.6,8.8,6.2]); cube([3,8.8,10.6]); }
@@ -69,13 +69,12 @@ module DC_plug(){
 }
 
 module arduino_mega(){
-    color("blue") pcb();
-    color("#111111") headers();
-    USB_plug();
-    DC_plug();
-    components();
+    color("blue") arduino_mega_pcb();
+    color("#111111") arduino_mega_headers();
+    arduino_mega_USB_plug();
+    arduino_mega_DC_plug();
+    arduino_mega_components();
 }
-
 
 
 
