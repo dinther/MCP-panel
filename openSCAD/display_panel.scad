@@ -219,6 +219,11 @@ module hole_test(){
         translate([27, 0, 0]) push_button_hole(thickness, 0);   
         translate([39, 0, 0]) selector_hole(thickness, 0); //cylinder(d=9.85, h=thickness);
     }
+    translate([0, 8, thickness]) text(text = "1", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+    translate([7, 8, thickness]) text(text = "2", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+    translate([17, 8, thickness]) text(text = "3", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+    translate([27, 8, thickness]) text(text = "4", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
+    translate([39, 8, thickness]) text(text = "5", font = "Liberation Sans:style=Normal", size = 4.5, valign = "center", halign = "center");
 }
 
 //  back cover lid for the display panel
