@@ -101,48 +101,47 @@ module cut_out_shape(){
             fm = 0;
     union(){
         text_y = 4;
+        //  display 1
         translate([left_margin + digit_width * 1.5, display_base+digit_height + text_y, 0])
         text(text = display_1_text, font = font, size = text_size, valign = "bottom", halign = "center");
         translate([left_margin + digit_width * 1.5, display_base + digit_height * 0.5, 0]) difference(){
             rsquare(s= [fm + digit_width * 3, fm + digit_height], r=1, offset=0);
             rsquare(s= [fm + digit_width * 3, fm + digit_height], r=1, offset=-0.75);
         }
+        
+        //  display 2
         translate([left_margin + digit_width * 5.5, display_base+digit_height + text_y, 0])
         text(text = display_2_text, font = font, size = text_size, valign = "bottom", halign = "center");
         translate([left_margin + digit_width * 5.5, display_base + digit_height * 0.5, 0]) difference(){
             rsquare(s= [fm + digit_width * 3,fm + digit_height], r=1, offset=0);
             rsquare(s= [fm + digit_width * 3,fm + digit_height], r=1, offset=-0.75);
         }
-        translate([left_margin + display_outer_width, display_base + digit_height - 2.55, 0])
-        text(text = display_led_1_text, font = font, size = text_size, valign = "center", halign = "left");
-
-        translate([left_margin + display_outer_width, display_base + 3.15, 0])
-        text(text = display_led_2_text, font = font, size = text_size, valign = "center", halign = "left");
-
+        
+        //  display 3
         translate([left_margin + display_outer_width + spacing + digit_width * 1.5, display_base + digit_height + text_y, 0])
         text(text = display_3_text, font = font, size = text_size, valign = "bottom", halign = "center");
         translate([left_margin + display_outer_width + spacing + digit_width * 1.5, display_base + digit_height * 0.5, 0]) difference(){
             rsquare(s= [fm + digit_width * 3,fm + digit_height], r=1, offset=0);
             rsquare(s= [fm + digit_width * 3,fm + digit_height], r=1, offset=-0.75);
         }
+        
+        //  display 4
         translate([left_margin + display_outer_width + spacing + digit_width * 6, display_base + digit_height + text_y, 0])
         text(text = display_4_text, font = font, size = text_size, valign = "bottom", halign = "center");
         translate([left_margin + display_outer_width + spacing + digit_width * 6, display_base + digit_height * 0.5, 0]) difference(){
             rsquare(s= [fm + digit_width * 4,fm + digit_height], r=1, offset=0);
             rsquare(s= [fm + digit_width * 4,fm + digit_height], r=1, offset=-0.75);
         }
-        translate([left_margin + display_outer_width + spacing + digit_width * 7.5, display_base-row_spacing+6, 0])
-        text(text = vertical_wheel_top_text, font = font, size = text_size, valign = "center", halign = "center");
 
-        translate([left_margin + display_outer_width + spacing + digit_width * 7.5, display_base-row_spacing-22, 0])
-        text(text = vertical_wheel_bottom_text, font = font, size = text_size, valign = "center", halign = "center");
-        
+        //  display 5
         translate([left_margin + display_outer_width + spacing + display_outer_width + spacing + digit_width * 2.5, display_base + digit_height + text_y, 0])
         text(text = display_5_text, font = font, size = text_size, valign = "bottom", halign = "center");
         translate([left_margin + display_outer_width + spacing + display_outer_width + spacing + digit_width * 2.5, display_base + digit_height * 0.5, 0]) difference(){
             rsquare(s= [fm + digit_width * 5,fm + digit_height], r=1, offset=0);
             rsquare(s= [fm + digit_width * 5,fm + digit_height], r=1, offset=-0.75);
         }
+        
+        //  display 6
         translate([left_margin + display_outer_width + spacing + display_outer_width + spacing + digit_width * 7, display_base + digit_height + text_y, 0])
         text(text = display_6_text, font = font, size = text_size, valign = "bottom", halign = "center");
         translate([left_margin + display_outer_width + spacing + display_outer_width + spacing + digit_width * 7, display_base + digit_height * 0.5, 0]) difference(){
@@ -150,11 +149,13 @@ module cut_out_shape(){
             rsquare(s= [fm + digit_width * 2,fm + digit_height], r=1, offset=-0.75);
         }
 
-        translate([13, bottom_row + 12, thickness - 0.6])
-        difference(){
-            circle(d=9);
-            text(text = lit_panel_text, font = font, size = text_size, valign = "center", halign = "center");
-        }
+        //  vertical wheel labels
+        translate([left_margin + display_outer_width + spacing + digit_width * 7.5, display_base-row_spacing+6, 0])
+        text(text = vertical_wheel_top_text, font = font, size = text_size, valign = "center", halign = "center");
+
+        translate([left_margin + display_outer_width + spacing + digit_width * 7.5, display_base-row_spacing-22, 0])
+        text(text = vertical_wheel_bottom_text, font = font, size = text_size, valign = "center", halign = "center");
+        
         //  arrow up down
         translate([left_margin + display_outer_width + spacing + digit_width * 7.5 -2.5, display_base-row_spacing-8, 0])
         polygon([[-0.3,2],[-0.3,8], [-1.5,8],[0,10],[1.5,8],[0.3,8],[0.3,2]]);
@@ -162,6 +163,25 @@ module cut_out_shape(){
         polygon([[-0.3,-2],[0.3,-2],[0.3,-8],[1.5,-8],[0,-10],[-1.5,-8],[-0.3,-8]]);
         translate([left_margin + display_outer_width + spacing + digit_width * 7.5 -4.5, display_base-row_spacing-8.3, 0])
         square([4,0.6]);
+
+
+        //  display LED top
+        translate([left_margin + display_outer_width, display_base + digit_height - 2.55, 0])
+        text(text = display_led_1_text, font = font, size = text_size, valign = "center", halign = "left");
+
+        //  display LED bottom
+        translate([left_margin + display_outer_width, display_base + 3.15, 0])
+        text(text = display_led_2_text, font = font, size = text_size, valign = "center", halign = "left");
+
+
+
+
+        translate([13, bottom_row + 12, thickness - 0.6])
+        difference(){
+            circle(d=9);
+            text(text = lit_panel_text, font = font, size = text_size, valign = "center", halign = "center");
+        }
+
         
         //  encoder markings
         translate([left_margin + digit_width*1.5, display_base - row_spacing]){ ring(d1=19, d2=18); translate([-0.25,9]) square([0.5,4]); }
