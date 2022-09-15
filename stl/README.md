@@ -28,6 +28,9 @@ Print it with the back flat on the build plate.
 
 ### Display panel
 The main panel is a composite of two material colors. There is the main body in gray and the text and symbol inlays in white.
+
+![image](https://user-images.githubusercontent.com/1192916/190298700-c256e732-33a4-4015-a897-6c85040f43eb.png)
+
 Load the main body into the slicer and place it with the face (Text side) down on the build plate. Then import the display panel text stl and also place it face down on the build plate.
 Align the two objects as accurately as possible.
 
