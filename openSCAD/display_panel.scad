@@ -10,7 +10,10 @@ depth = 35;
 thickness = 3;
 //  Thickness of side walls
 wall = 2;
-font = "Liberation Sans:style=Normal"; //"Liberation Sans:style=Bold";
+font = "Bahnschrift:style=Light";
+//font = "Liberation Sans:style=Normal";
+//font = "Liberation Sans:style=Light";
+//font = "Liberation Sans:style=Bold";
 //  Height of the text font. Beware of 3D printer limitations.
 text_size = 4.5;
 //  layer height you intend to use for the slicer.
@@ -173,9 +176,7 @@ module cut_out_shape(){
         translate([left_margin + display_outer_width, display_base + 3.15, 0])
         text(text = display_led_2_text, font = font, size = text_size, valign = "center", halign = "left");
 
-
-
-
+        //  Lit panel text
         translate([13, bottom_row + 12, thickness - 0.6])
         difference(){
             circle(d=9);

@@ -1,23 +1,16 @@
+/* [General] */
+$fn = 90;
 outer_radius = 8;
 shaft_radius = 3.06; //still to print and try
 knob_height = 15;
 layer_height = 0.15;
 nut_cutout_height = 4;
 nut_radius = 7.0;
-$fn = 90;
+
 ribble_radius = 0.5;
 font = "Liberation Sans:style=Bold";
 body_color = "silver"; //"whitesmoke";
 inlay_color = "white"; //"dimgray";
-
-
-
-module tube(d1, d2, h){
-    linear_extrude(h) difference(){
-        circle(d=d1);
-        circle(d=d2);
-    }
-}
 
 module cap_carve(radius, x = 1.5, y = 1.5){
     difference(){
@@ -150,7 +143,7 @@ module inlays(){
     translate([col * 1, row * 1, 0]) selector_decal(outer_radius, layer_height * 2);
 }
 
-//knobs();
-//inlays();
+knobs();
+inlays();
 
 
