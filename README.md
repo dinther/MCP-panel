@@ -33,6 +33,8 @@ You only need three outputs for the all the displays as they are linked.
 
 ![image](https://user-images.githubusercontent.com/1192916/191899844-a6f5009d-5c13-4f47-bade-523dc0547774.png)
 
+Tip: Pick the ones where the two display componets are soldered on straight. I noticed many of these displayed online are crooked. However, I did design in some leeway in the 3D panel to accomodate this.
+
 https://www.jaycar.co.nz/8-digit-7-segment-display-module/p/XC3714
 
 ### Tactile push buttons
