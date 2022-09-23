@@ -62,19 +62,35 @@ module buttonlid(text = "ABC", text_offset = 2.5, hole_offset = 2, show_light = 
      
 }
 
-module MCP_button(text = "ABC", text_offset = 2.5, hole_offset = 2, show_light = true, print=true){
+module rail(w, l, h){
+    hull(){
+        translate([0, 0, 0]) sphere(d=w);
+        translate([0, l, 0]) sphere(d=w);
+        translate([0, l, h]) sphere(d=w);
+        translate([0, 0, h]) sphere(d=w);        
+    }
+}
+
+
+module MCP_button(text = "ABC", text_offset = 2.5, hole_offset = 2, show_light = true, railing=true, print=true){
+    rw = railing? 1.2 : 0;
     color("dimgray") difference(){
         union(){
             linear_extrude(MCP_button_height - 2 - MCP_layer_height)
-            rsquare(MCP_button_size, MCP_button_radius, offset=0);
+            rsquare([MCP_button_size[0] + (rw * 2), MCP_button_size[1]], MCP_button_radius, offset=0);
             
             translate([0, 0, MCP_button_height-2-MCP_layer_height * 2])
             linear_extrude(1.5)
             rsquare(MCP_button_size, MCP_button_radius, offset = -MCP_wall_thickness);
+            if (rw> 0){
+                translate([-(rw * 0.5)-0.1-MCP_button_size[0] * 0.5, -MCP_button_size[1] * 0.75 * 0.5,rw * 0.50]) rail(rw-0.2, MCP_button_size[1] * 0.75, MCP_button_height); 
+                translate([(rw * 0.5)+0.1+MCP_button_size[0] * 0.5, -MCP_button_size[1] * 0.75 * 0.5,rw * 0.50]) rail(rw-0.2, MCP_button_size[1] * 0.75, MCP_button_height);                 
+            }
         }
         translate([0,-hole_offset,-1])
         cylinder(d=9.85, h=1+ MCP_button_height - MCP_layer_height);     
     }
+
     if (print){
         translate([MCP_button_size[0]*1.1,0,2 + MCP_layer_height + MCP_layer_height])
         rotate([0,180,0]) color("dimgray") buttonlid(text = text, text_offset = text_offset, hole_offset = hole_offset, show_light = show_light);
@@ -101,6 +117,8 @@ module buttons(print = true){
     translate([col * 0, row * 4, 0]) MCP_button(text = "SPD", show_light = true, print = print);
     translate([col * 0, row * 5, 0]) MCP_button(text = "HOLD", show_light = true, print = print);
     translate([col * 0, row * 6, 0]) MCP_button(text = "VS", show_light = true, print = print);
+    translate([col * 0, row * 7, 0]) MCP_button(text = "APPR", show_light = true, print = print);
+    translate([col * 0, row * 8, 0]) MCP_button(text = "", show_light = true, print = print);
     translate([col * 1, row * 0, 0]) MCP_button(text = "FLC", show_light = true, print = print);
     translate([col * 1, row * 1, 0]) MCP_button(text = "NAV", show_light = true, print = print);
     translate([col * 1, row * 2, 0]) MCP_button(text = "HDG", show_light = true, print = print);
@@ -109,7 +127,9 @@ module buttons(print = true){
     translate([col * 1, row * 5, 0]) MCP_button(text = "APP", show_light = true, print = print);
     translate([col * 1, row * 6, 0]) MCP_button(text = "AP", show_light = true, print = print);
     translate([col * 1, row * 7, 0]) MCP_button(text = "WARN", show_light = true, print = print);
+    translate([col * 1, row * 8, 0]) MCP_button(text = "", show_light = true, print = print);
 }
 
 
-buttons(MCP_print);
+//buttons(MCP_print);
+MCP_button(text = "HDG", show_light = true, print = MCP_print);
