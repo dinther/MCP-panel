@@ -49,7 +49,7 @@ I actually used two types of encoders and the shafts were slightly different. Th
 
 ![image](https://user-images.githubusercontent.com/1192916/191902905-9cfea7e5-0e4f-4883-9c30-0e62887eee89.png)
 
-https://www.jaycar.co.nz/rotary-encoder-with-pushbutton/p/SR1230?pos=1&queryId=81e29030cb94ffc75b0ace053beae96e
+https://www.jaycar.co.nz/rotary-encoder-with-pushbutton/p/SR1230
 
 ### Dual color 3mm LED's
 
