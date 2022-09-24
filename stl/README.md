@@ -31,6 +31,13 @@ The main panel is a composite of two material colors. There is the main body in 
 
 ![image](https://user-images.githubusercontent.com/1192916/190298700-c256e732-33a4-4015-a897-6c85040f43eb.png)
 
+### Pushbutton caps
+
+In order to get nice captions on your push buttons you can use this 3D model. The base clamps onto a tacktile push button and a cap snaps onto the base with whatever caption you want.
+
+![image](https://user-images.githubusercontent.com/1192916/192100756-7ad479ae-fe99-4824-9c79-6ee6bf17af12.png)
+
+
 Load the main body into the slicer and place it with the face (Text side) down on the build plate. Then import the display panel text stl and also place it face down on the build plate.
 Align the two objects as accurately as possible.
 
