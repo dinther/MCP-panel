@@ -9,8 +9,13 @@ nut_radius = 7.0;
 
 ribble_radius = 0.5;
 font = "Liberation Sans:style=Bold";
+Altitude_caption = "SEL";
 body_color = "silver"; //"whitesmoke";
 inlay_color = "white"; //"dimgray";
+
+/* [Render] */
+Show_knobs = true;
+Show_inlays = true;
 
 module cap_carve(radius, x = 1.5, y = 1.5){
     difference(){
@@ -45,6 +50,7 @@ module selector_knob(radius, shaft, height){
         translate([0,0,height - nut_cutout_height]) cylinder(r=nut_radius, h=nut_cutout_height+1);
         translate([0,0,-0.1]) selector_decal(outer_radius, 0.1 + layer_height * 2);
         translate([0,0,3.0]) {
+            //  Cut D shaft hole
             rotate([0,0,165]) intersection(){
                 cylinder(r=shaft, h=height);    //  re-cut shaft
                 translate([-shaft,-shaft,0]) cube([5.5, shaft *2, height+1]);
@@ -91,12 +97,12 @@ module course_decal(radius, height){
 module altitude_knob(radius, shaft, height){
     difference(){
         base_knob(radius = radius, shaft = shaft, height = height, texture = "ribble");
-        translate([0,0,-0.1]) altitude_decal(outer_radius, 0.1 + layer_height * 2);
+        translate([0,0,-0.1]) altitude_decal(outer_radius, 0.1 + layer_height * 2, Altitude_caption);
     }
 }
 
-module altitude_decal(radius, height){
-    color(inlay_color) mirror([1,0,0]) linear_extrude(height) text(text="SEL", font = font, size=4.5, valign="center", halign="center");
+module altitude_decal(radius, height, text="SEL"){
+    color(inlay_color) mirror([1,0,0]) linear_extrude(height) text(text=text, font = font, size=4.5, valign="center", halign="center");
 }
 
 module IAS_knob(radius, shaft, height){
@@ -139,11 +145,15 @@ module inlays(){
     col = 40;
     translate([col * 0, row * 0, 0]) course_decal(outer_radius, layer_height * 2);
     translate([col * 2, row * 0, 0]) heading_decal(outer_radius, layer_height * 2);
-    translate([col * 0, row * 1, 0]) altitude_decal(outer_radius, layer_height * 2);
+    translate([col * 0, row * 1, 0]) altitude_decal(outer_radius, layer_height * 2, Altitude_caption);
     translate([col * 1, row * 1, 0]) selector_decal(outer_radius, layer_height * 2);
 }
 
-knobs();
-inlays();
+if (Show_knobs) {
+    knobs();
+}
+if (Show_inlays){
+    inlays();
+}
 
 
