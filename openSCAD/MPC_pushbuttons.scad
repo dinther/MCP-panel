@@ -11,13 +11,13 @@ MCP_font = "Bahnschrift:style=normal";
 // Caption for the button when MCP_show_just_one is set to true.
 MCP_caption = "FLY";
 //  Change and add as many captions as you wish. 3, sometimes 4 characters is the maximum unless you increase the button size of course.
-MCP_captions = ["N1", "LVL", "VOR", "ALT", "SPD", "HOLD", "VS", "YD", "FLC", "NAV", "HDG", "VNAV", "LNAV", "APP", "AP", "WAR", "", "", " ", " " ];
+MCP_captions = ["N1", "LVL", "VOR", "ALT", "SPD", "HLD", "VS", "YD", "FLC", "NAV", "HDG", "VNAV", "LNAV", "APP", "AP", "WRN", "ERR", "", "", " ", " " ];
 
 //  Depth from button base to activation surface when pressed down.
 MCP_button_face_depth = 2.5;
 MCP_base_height = MCP_layer_height * 2;
 // Outer width of the button
-MCP_button_width = 20;
+MCP_button_width = 20.1;
 // Outer height of the button
 MCP_button_height = 16;
 // Radius of the outer button corner
@@ -30,7 +30,6 @@ MCP_text_offset = 2.5;
 
 MCP_railing_width = 1.4;
 MCP_show_light = true;
-
 
 // Gap between button active surface and the caption plate hovering above
 MCP_activation_gap = 0.0;
@@ -87,13 +86,11 @@ module inlay(text = "ABC", height = 1, show_light = true){
 module buttoncap(text = "ABC", show_light = true){
     inlay_height = MCP_layer_height * MCP_inlay_height_in_layers;
     color("dimgray") linear_extrude(MCP_lid_height) difference(){
-        rsquare([MCP_actual_button_width, MCP_button_height], MCP_button_corner_radius);
-        rsquare([MCP_actual_button_width, MCP_button_height], MCP_button_corner_radius, offset=-MCP_wall_thickness);
+         rsquare([MCP_actual_button_width, MCP_button_height], MCP_button_corner_radius);
+         rsquare([MCP_actual_button_width, MCP_button_height], MCP_button_corner_radius, offset=-MCP_wall_thickness);      
     }
 
-    //  hinge line
-    translate([-6, MCP_button_height * 0.5 - 1.8, MCP_lid_height - inlay_height]) color("dimgray") cube([12, 1.8, inlay_height - MCP_layer_height]);
-    
+
     translate([0, 0, MCP_lid_height - (inlay_height * 0.5)]) difference(){
         color("dimgray") linear_extrude(inlay_height * 0.5)
         rsquare([MCP_actual_button_width - cr, MCP_button_height - 0.1], MCP_button_corner_radius, offset = -MCP_wall_thickness - MCP_flap_gap);
