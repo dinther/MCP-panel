@@ -3,16 +3,20 @@ use <SPST_PCB_Mount_Tactile_Switch_with_LED.scad>
 
 /* [General] */
 $fn=45;
-cr = 0.01; //  avoid z fighting
+//  avoid z fighting  for quick render (f5)
+cr = 0.01;
+/* [3D Printer] */
 //  Layer height you intend to print this at. Setting this correctly helps with a more accurate print.
-MCP_layer_height = 0.3;
+MCP_layer_height = 0.2;
 MCP_inlay_height_in_layers = 4;
+/* [Caption settings] */
 MCP_font = "Bahnschrift:style=normal";
 // Caption for the button when MCP_show_just_one is set to true.
 MCP_caption = "FLY";
 //  Change and add as many captions as you wish. 3, sometimes 4 characters is the maximum unless you increase the button size of course.
 MCP_captions = ["N1", "LVL", "VOR", "ALT", "SPD", "HLD", "VS", "YD", "FLC", "NAV", "HDG", "VNAV", "LNAV", "APP", "AP", "WRN", "ERR", "", "", " ", " " ];
 
+/* [Switch dimensions ] */
 //  Depth from button base to activation surface when pressed down.
 MCP_button_face_depth = 2.5;
 MCP_base_height = MCP_layer_height * 2;
@@ -26,9 +30,10 @@ MCP_button_corner_radius = 2;
 MCP_hole_offset = 1.8;
 // An offset can be given to get the text vertically off-center
 MCP_text_offset = 2.5;
-// Add a railing to the sides of the button
 
+// Width of the railing protecting the left and right side of the push button. Set to 0 if you don't want a railing.
 MCP_railing_width = 1.4;
+//  Check to insert a line light indicator right above the switch LED.
 MCP_show_light = true;
 
 // Gap between button active surface and the caption plate hovering above
@@ -40,12 +45,15 @@ MCP_wall_thickness = 0.75;
 MCP_flap_gap = 0.4;
 MCP_lid_height = MCP_button_face_depth - MCP_base_height + MCP_activation_gap + (MCP_layer_height * MCP_inlay_height_in_layers);
 
+/* [Render] */
 //  Organize buttons in rows up to max_rows then start a new column.
 MCP_max_rows = 7;
 MCP_show_base = true;
 MCP_show_caps = true;
 MCP_show_inlays = true;
+//  Check if you want to see the switch itself
 MCP_show_switch = false;
+//  Check if you only want to render a single switch
 MCP_show_one = false;
 // Shows exploded view when not zero
 MCP_explode = 0; // [0:0.01:2]
