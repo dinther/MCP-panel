@@ -1,5 +1,7 @@
 # MCP-panel
 
+This project shows how to make a control panel with various switches, displays and encoders that can be used in conjuction with Microsoft Flight simulator.
+
 ![image](https://user-images.githubusercontent.com/1192916/190020247-507466dd-918f-47a0-b019-b9db686d0157.png)
 
 3D print your own MCP panel for flight simulator.
