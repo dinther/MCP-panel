@@ -3,7 +3,7 @@
 This project shows how to make a control panel with various switches, displays and encoders that can be used in conjuction with Microsoft Flight simulator or other flight simulator programs such as XPlane or DCS (Combat Flight Simulator)
 
 You can write your own software interface or save yourself the pain and simply use the excellent free and open source Mobiflight software https://www.mobiflight.com/
-Inclided in the project is a complete mobiflight definition file for Microsoft Flight Simulator and the cudstom CJ4 aircraft.
+Included in the project is a complete mobiflight definition file for Microsoft Flight Simulator and the cudstom CJ4 aircraft.
 
 ![image](https://user-images.githubusercontent.com/1192916/190020247-507466dd-918f-47a0-b019-b9db686d0157.png)
 
